@@ -1,4 +1,12 @@
 
+
+/***
+ * TODO:
+ * 
+ * Mejorar Index para que ball_q sea obtenido desde el parametro de la URL
+ * 
+ * 
+ */
 let ball_q = 15;
 let ball_size = 10;
 let gridSize = 30;
@@ -7,8 +15,6 @@ let dungeonData;
 let circles = [];
 let speedScale = 1; // Ajusta la velocidad global
 let isPaused = false;
-
-
 
 function preload() {
   // Cargar el JSON con la estructura de la mazmorra
@@ -75,6 +81,16 @@ class Circle {
       if (gridX >= 0 && gridX < gridSize && gridY >= 0 && gridY < gridSize) {
         if (dungeonData.grid[gridY][gridX] === 1) {
           // Colisión detectada
+
+          /***
+           * 
+           * TODO:
+           * 
+           * Añadir contador de colisiones 
+           * 
+           * 
+           */
+
           // Invertir la velocidad según la dirección de la colisión
           this.x = (this.speedX > 0) ? (gridX * cellSize) : ((gridX + 1) * cellSize);
           this.y = (this.speedY > 0) ? (gridY * cellSize) : ((gridY + 1) * cellSize);
@@ -86,7 +102,7 @@ class Circle {
       }
       var v = createVector(this.x, this.y);
       this.history.push(v);
-      this.displayTrail();
+      this.displayTrail(); // Comentar esta linea para que no se vean las estelas 
     }
   }
 
