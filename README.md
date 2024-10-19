@@ -18,6 +18,7 @@
 - Mejorar index.html
 
 ## Cambios
+- Conteo de colisiones
 - Pelotas choquen
 - Pausa (con barra espaciadora)
 - Traza de colores (la traza se mantiene)
