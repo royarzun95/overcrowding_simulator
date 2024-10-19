@@ -1,0 +1,26 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+
+}
+
+#collisions_table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  #collisions_table td, #collisions_table th {
+    border: 1px solid #ddd;
+    padding: 8px;
+  }
+  
+  #collisions_table tr:nth-child(even){background-color: #f2f2f2;}
+  
+  #collisions_table tr:hover {background-color: #ddd;}
+  
+  #collisions_table th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #4053c0;
+    color: white;
+  }

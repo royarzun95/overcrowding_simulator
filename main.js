@@ -22,7 +22,9 @@ function preload() {
 }
 
 function setup() {
-  createCanvas(gridSize * cellSize, gridSize * cellSize);
+  var canvas = createCanvas(gridSize * cellSize, gridSize * cellSize);
+  canvas.parent("canvas_div");
+
   // Crear algunos círculos
   for (let i = 0; i < ball_q; i++) {
     circles.push(new Circle(random(width), random(height), color(random(255), random(255), random(255))));
@@ -60,6 +62,19 @@ function draw() {
   }
 }
 
+function update_table()
+{
+  const table = document.getElementById("collisions_table");
+  table.innerHTML = "<thead><tr><th>Color</th><th>Cantidad de colisiones</th></tr></thead>";
+  
+  for (let i = 0; i < circles.length; i++)
+  {
+    var table_data = "";
+    table_data = '<td style="background-color:rgb('+circles[i].color.levels[0] + "," + circles[i].color.levels[1] + "," + circles[i].color.levels[2]+')">'+ circles[i].color.levels[0] + "," + circles[i].color.levels[1] + "," + circles[i].color.levels[2] + "</td>" + "<td>" + circles[i].collisions + "</td>";
+    table.insertRow(-1).innerHTML = table_data;
+  }
+}
+
 class Circle {
   constructor(x, y, color) {
     this.x = x;
@@ -68,7 +83,7 @@ class Circle {
     this.speedX = random(-1, 1) * speedScale;
     this.speedY = random(-1, 1) * speedScale;
     this.history = [];
-
+    this.collisions = 0;
   }
 
   move() {
@@ -112,6 +127,7 @@ class Circle {
     let distance = sqrt(dx * dx + dy * dy);
 
     if (distance < ball_size * 2) {
+      this.addCollision(other);
       // Colisión detectada
       let angle = Math.atan2(dy, dx);
       let sin = Math.sin(angle);
@@ -125,8 +141,15 @@ class Circle {
       other.speedX = tempX;
       other.speedY = tempY;
     }
+    
   }
 
+  addCollision(other)
+  {
+    this.collisions = this.collisions + 1;
+    other.collisions = other.collisions + 1;
+    update_table();
+  }
 
   displayTrail() {
     for (var i = 0; i < this.history.length; i++) {
