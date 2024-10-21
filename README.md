@@ -1,5 +1,18 @@
 # overcrowding_simulator
 
+## Datos
+
+* **Taira Chiang Ancaten (taichiang@uc.cl)**: Diseño, Gestión y Propietaria.
+* **Víctor Mendez Muñoz (victor.mendez@uc.cl)**: Docente Guia.
+
+### Licencias
+
+* Este proyecto utiliza la librería `p5.js` bajo la licencia `LGPL-2.1`.
+
+### Proposito
+
+> Este proyecto está construido exclusivamente para la tesis `Análisis de las formas de ocupación doméstica para recintos habitacionales en Estación Yuma: Aplicación de simuladores virtuales para la comprensión de sitios industriales en abandono` 
+
 ## Como utilizar
 1. Descarga los archivos
 2. Instalar VS Code
@@ -15,9 +28,9 @@
 - Pausa [Barra espaciadora]
 
 ## Pendientes
-- Mejorar index.html
+- Mejorar vista index.html
 
-## Cambios
+## Log de Cambios
 - Pelotas choquen
 - Pausa (con barra espaciadora)
 - Traza de colores (la traza se mantiene)
