@@ -30,12 +30,7 @@
 ## Pendientes
 - Mejorar vista index.html
 
-<<<<<<< HEAD
 ## Log de Cambios
-=======
-## Cambios
-- Conteo de colisiones
->>>>>>> 3d9a02b1a766e149f268e39ad73ca17fc03d0e48
 - Pelotas choquen
 - Pausa (con barra espaciadora)
 - Traza de colores (la traza se mantiene)
